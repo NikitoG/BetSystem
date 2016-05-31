@@ -3,7 +3,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class BetSyStemDbContext : IdentityDbContext<User>
+    public class BetSyStemDbContext : IdentityDbContext<User>, IBetSystemDbContext
     {
         public BetSyStemDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -307,9 +307,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -319,6 +317,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\BetSystem.Data.Common\BetSystem.Data.Common.csproj">
+      <Project>{CAE9FFE4-4BBD-490B-861E-8CCCD4797C32}</Project>
+      <Name>BetSystem.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\BetSystem.Data.Models\BetSystem.Data.Models.csproj">
       <Project>{cb5fc43b-e071-4a7b-905c-d27204a596c1}</Project>
       <Name>BetSystem.Data.Models</Name>
