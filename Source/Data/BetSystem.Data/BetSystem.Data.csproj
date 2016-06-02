@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="BetSystemDbContext.cs" />
     <Compile Include="IBetSystemDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
