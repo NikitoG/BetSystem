@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetSystem.Common.Constants"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetSystem.Services.Web", "Services\BetSystem.Services.Web\BetSystem.Services.Web.csproj", "{856AE9D8-2007-4177-A7F2-9A766185D62C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetSystem.Web.Infrastructure", "Web\BetSystem.Web.Infrastructure\BetSystem.Web.Infrastructure.csproj", "{D0340DBC-342E-4764-A073-B334ABAC4699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{856AE9D8-2007-4177-A7F2-9A766185D62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{856AE9D8-2007-4177-A7F2-9A766185D62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{856AE9D8-2007-4177-A7F2-9A766185D62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0340DBC-342E-4764-A073-B334ABAC4699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0340DBC-342E-4764-A073-B334ABAC4699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0340DBC-342E-4764-A073-B334ABAC4699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0340DBC-342E-4764-A073-B334ABAC4699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,5 +81,6 @@ Global
 		{6F0DD412-EABB-4D16-AD04-8A55057CA05F} = {ADF55653-7A76-4647-9C26-23063B51FBAF}
 		{9A059C24-CD27-4F6B-A944-E6820F3B59C9} = {69579F25-6C87-4488-8B57-28DFD601E080}
 		{856AE9D8-2007-4177-A7F2-9A766185D62C} = {ADF55653-7A76-4647-9C26-23063B51FBAF}
+		{D0340DBC-342E-4764-A073-B334ABAC4699} = {0699E533-AD28-4DEB-8460-F75C334A1FF0}
 	EndGlobalSection
 EndGlobal

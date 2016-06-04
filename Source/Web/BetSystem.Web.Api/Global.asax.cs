@@ -10,7 +10,9 @@
     {
         protected void Application_Start()
         {
+            AutofacConfig.RegisterAutofac();
             DatabaseConfig.Initialize();
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

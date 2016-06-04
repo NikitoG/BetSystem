@@ -1,10 +1,10 @@
-﻿namespace BetSystem.Services.Data.Contracts
+﻿namespace BetSystem.Services.Data
 {
     using BetSystem.Data.Models;
     using System.Linq;
 
     public interface ISportsService
     {
-        IQueryable<Sport> GetAllSports(int page = 1);
+        IQueryable<Sport> GetAllSports();
     }
 }

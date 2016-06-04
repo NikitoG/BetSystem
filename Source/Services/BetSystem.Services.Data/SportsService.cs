@@ -4,7 +4,6 @@
     using System.Linq;
     using BetSystem.Data.Common;
     using BetSystem.Data.Models;
-    using BetSystem.Services.Data.Contracts;
 
     public class SportsService : ISportsService
     {
@@ -15,9 +14,9 @@
             this.sports = sports;
         }
 
-        public IQueryable<Sport> GetAllSports(int page = 1)
+        public IQueryable<Sport> GetAllSports()
         {
-            return null;
+            return this.sports.All();
         }
     }
 }

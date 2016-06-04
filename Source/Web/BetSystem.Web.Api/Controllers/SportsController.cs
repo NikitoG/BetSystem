@@ -1,17 +1,22 @@
 ﻿namespace BetSystem.Web.Api.Controllers
 {
-    using Ninject;
-    using Services.Data.Contracts;
+    using Services.Data;
+    using System.Linq;
     using System.Web.Http;
 
-    public class SportsController : ApiController
+    public class SportsController : BaseController
     {
-        [Inject]
-        public ISportsService Sports { get; set; }
+        private readonly ISportsService sports;
+
+        public SportsController(ISportsService sports)
+        {
+            this.sports = sports;
+        }
 
         public IHttpActionResult Get(int page = 1)
         {
-            return this.Ok("Spors Controller!");
+            var result = this.sports.GetAllSports().Count();
+            return this.Ok(result);
         }
     }
 }
