@@ -330,6 +330,7 @@ namespace BetSystem.Web.Api.Controllers
             }
 
             var user = new User() { UserName = model.Email, Email = model.Email };
+            user.CreatedOn = DateTime.Now;
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 

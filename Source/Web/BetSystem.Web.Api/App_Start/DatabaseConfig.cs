@@ -9,7 +9,7 @@
     {
         public static void Initialize()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BetSyStemDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BetSystemDbContext, Configuration>());
         }
     }
 }

@@ -5,9 +5,9 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class BetSyStemDbContext : IdentityDbContext<User>, IBetSystemDbContext
+    public class BetSystemDbContext : IdentityDbContext<User>, IBetSystemDbContext
     {
-        public BetSyStemDbContext()
+        public BetSystemDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
@@ -22,9 +22,9 @@
 
         public IDbSet<Sport> Sports { get; set; }
 
-        public static BetSyStemDbContext Create()
+        public static BetSystemDbContext Create()
         {
-            return new BetSyStemDbContext();
+            return new BetSystemDbContext();
         }
     }
 }

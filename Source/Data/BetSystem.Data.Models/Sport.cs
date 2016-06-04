@@ -19,9 +19,8 @@
         [Index(IsUnique = true)]
         [StringLength(50, MinimumLength = 2)]
         public string Name { get; set; }
-
-        [Index(IsUnique = true)]
-        public string Key { get; set; }
+        
+        public int Key { get; set; }
 
         public virtual ICollection<Event> Events
         {
