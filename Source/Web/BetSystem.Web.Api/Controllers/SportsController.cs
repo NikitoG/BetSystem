@@ -6,6 +6,8 @@
     using System.Linq;
     using System.Web.Http;
     using Models.Games;
+    using System.Web.Http.Cors;
+    
     public class SportsController : BaseController
     {
         private readonly ISportsService sports;

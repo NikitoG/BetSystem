@@ -17,12 +17,13 @@ using BetSystem.Web.Api.Models;
 using BetSystem.Web.Api.Providers;
 using BetSystem.Web.Api.Results;
 using BetSystem.Data.Models;
+using System.Web.Http.Cors;
 
 namespace BetSystem.Web.Api.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Account")]
-    public class AccountController : BaseController
+    [RoutePrefix("api/users")]
+    public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
@@ -326,20 +327,24 @@ namespace BetSystem.Web.Api.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return this.BadRequest(this.ModelState);
             }
 
-            var user = new User() { UserName = model.Email, Email = model.Email };
-            user.CreatedOn = DateTime.Now;
+            var user = new User
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                CreatedOn = DateTime.Now
+            };
 
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+            IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
             {
-                return GetErrorResult(result);
+                return this.GetErrorResult(result);
             }
 
-            return Ok();
+            return this.Ok();
         }
 
         // POST api/Account/RegisterExternal
