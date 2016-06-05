@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     using BetSystem.Data.Common.Models;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     public class Bet : BaseModel<int>
     {
         public ICollection<Odd> odds;
@@ -14,6 +14,7 @@
             this.odds = new HashSet<Odd>();
         }
 
+        [Index]
         public int Key { get; set; }
 
         [Required]

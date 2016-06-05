@@ -4,9 +4,10 @@
     using System.ComponentModel.DataAnnotations;
 
     using BetSystem.Data.Common.Models;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     public class Odd : BaseModel<int>
     {
+        [Index]
         public int Key { get; set; }
 
         [Required]

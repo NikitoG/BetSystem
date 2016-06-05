@@ -4,6 +4,7 @@
 
     using BetSystem.Data.Common.Models;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     public class Event : BaseModel<int>
     {
         public ICollection<Match> games;
@@ -13,6 +14,7 @@
             this.games = new HashSet<Match>();
         }
 
+        [Index]
         public int Key { get; set; }
 
         [Required]

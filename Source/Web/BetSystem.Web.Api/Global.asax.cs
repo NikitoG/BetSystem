@@ -1,6 +1,8 @@
 ﻿namespace BetSystem.Web.Api
 {
     using BetSystem.Web.Api.App_Start;
+    using Infrastructure.Mapping;
+    using System.Reflection;
     using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
@@ -18,6 +20,9 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(Assembly.GetExecutingAssembly());
         }
     }
 }

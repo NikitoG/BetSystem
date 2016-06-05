@@ -5,6 +5,7 @@
 
     using BetSystem.Data.Common.Models;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
     public class Match : BaseModel<int>
     {
         public ICollection<Bet> bets;
@@ -14,6 +15,7 @@
             this.bets = new HashSet<Bet>();
         }
 
+        [Index]
         public int Key { get; set; }
 
         [Required]
