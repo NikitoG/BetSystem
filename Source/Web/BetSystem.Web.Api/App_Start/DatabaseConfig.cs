@@ -10,6 +10,7 @@
         public static void Initialize()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BetSystemDbContext, Configuration>());
+            BetSystemDbContext.Create().Database.Initialize(true);
         }
     }
 }

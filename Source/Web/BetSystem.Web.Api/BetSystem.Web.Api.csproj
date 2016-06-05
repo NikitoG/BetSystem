@@ -358,6 +358,10 @@
       <Project>{856ae9d8-2007-4177-a7f2-9a766185d62c}</Project>
       <Name>BetSystem.Services.Web</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BetSystem.Web.Infrastructure\BetSystem.Web.Infrastructure.csproj">
+      <Project>{d0340dbc-342e-4764-a073-b334abac4699}</Project>
+      <Name>BetSystem.Web.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

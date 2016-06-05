@@ -68,6 +68,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BetSystem.Data.Common\BetSystem.Data.Common.csproj">
+      <Project>{cae9ffe4-4bbd-490b-861e-8cccd4797c32}</Project>
+      <Name>BetSystem.Data.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BetSystem.Data.Models\BetSystem.Data.Models.csproj">
       <Project>{cb5fc43b-e071-4a7b-905c-d27204a596c1}</Project>
       <Name>BetSystem.Data.Models</Name>

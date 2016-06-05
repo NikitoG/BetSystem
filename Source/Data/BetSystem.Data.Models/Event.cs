@@ -22,8 +22,7 @@
         public int CategoryId { get; set; }
 
         public bool IsLive { get; set; }
-
-        [Required]
+        
         public int SportId { get; set; }
 
         public virtual Sport Sport { get; set; }

@@ -23,8 +23,7 @@
         public MatchType MatchType { get; set; }
 
         public DateTime StartDate { get; set; }
-
-        [Required]
+        
         public int EventId { get; set; }
 
         public virtual Event Event { get; set; }
