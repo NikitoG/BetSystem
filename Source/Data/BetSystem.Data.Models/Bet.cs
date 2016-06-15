@@ -14,9 +14,6 @@
             this.odds = new HashSet<Odd>();
         }
 
-        [Index]
-        public int Key { get; set; }
-
         [Required]
         public string Name { get; set; }
 

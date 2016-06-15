@@ -7,8 +7,6 @@
     using System.ComponentModel.DataAnnotations.Schema;
     public class Odd : BaseModel<int>
     {
-        [Index]
-        public int Key { get; set; }
 
         [Required]
         public string Name { get; set; }
