@@ -40,9 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BetsService.cs" />
+    <Compile Include="EventsService.cs" />
     <Compile Include="GamesService.cs" />
+    <Compile Include="IBetsService.cs" />
+    <Compile Include="IEventsService.cs" />
     <Compile Include="IGamesSevice.cs" />
+    <Compile Include="IOddsService.cs" />
     <Compile Include="ISportsService.cs" />
+    <Compile Include="OddsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SportsService.cs" />
   </ItemGroup>

@@ -1,10 +1,14 @@
 ﻿namespace BetSystem.Services.Data
 {
-    using BetSystem.Data.Models;
+    using System.Collections.Generic;
     using System.Linq;
+
+    using BetSystem.Data.Models;
 
     public interface ISportsService
     {
-        IQueryable<Sport> GetAllSports();
+        IQueryable<Sport> GetAll();
+
+        void AddOrUpdate(IEnumerable<Sport> sports);
     }
 }
