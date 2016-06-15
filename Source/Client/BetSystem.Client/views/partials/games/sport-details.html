@@ -1,0 +1,51 @@
+<div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+        <ul id="menu-content" class="menu-content collapse out">
+
+            <div ng-repeat="sport in vm.sports">
+                <li data-toggle="collapse" data-target="#{{sport.name}}"
+                    ng-class="sport.name == vm.name ? '' : 'collapsed'">
+                    <a href="#/sports/{{sport.name}}"><i class="fa fa-globe fa-lg"></i> {{sport.name}} <span
+                            class="badge">{{sport.numberOfGames}}</span><span
+                            class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="{{sport.name}}">
+                    <li ng-repeat="event in sport.events" ng-show="event.futureGames">
+                        <a href="#/sports/{{sport.name}}/{{event.key}}">{{event.eventName}} <span
+                                class="badge">{{event.futureGames}}</span></a>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class=" col-md-offset-3 col-md-8">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{vm.name}}
+                    <div class="pull-right">
+                        <div class="btn btn-sm btn-default" ng-click="vm.getGames()">Next 24 hours</div>
+                        <div class="btn btn-sm btn-default" ng-click="vm.getGames(true)">All</div>
+                    </div>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row" ng-repeat="game in vm.games" ng-class-odd="'striped'">
+                    <a href="#/match/{{game.key}}">
+                        <div class="col-md-2">{{game.startDate | date:'MMM d, HH:mm'}}</div>
+                        <div class="col-md-6">{{game.name}}</div>
+                        <div class="col-md-1" ng-repeat="odd in game.bet.odds">{{odd.value}}</div>
+                        <div class="col-md-1" ng-if="game.bet.odds.length == 3"><span class="input-group-addon">+{{game.betCount}}</span>
+                        </div>
+                        <div class="col-md-1 col-md-offset-1" ng-if="game.bet.odds.length == 2"><span
+                                class="input-group-addon">+{{game.betCount}}</span></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

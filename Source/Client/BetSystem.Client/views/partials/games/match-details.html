@@ -1,0 +1,70 @@
+<div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+        <ul id="menu-content" class="menu-content collapse out">
+
+            <div ng-repeat="sport in vm.sports">
+                <li data-toggle="collapse" data-target="#{{sport.name}}"
+                    ng-class="sport.name == vm.name ? '' : 'collapsed'">
+                    <a href="#/sports/{{sport.name}}"><i class="fa fa-globe fa-lg"></i> {{sport.name}} <span
+                            class="badge">{{sport.numberOfGames}}</span><span
+                            class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="{{sport.name}}">
+                    <li ng-repeat="event in sport.events" ng-show="event.futureGames">
+                        <a href="#/sports/{{sport.name}}/{{event.key}}">{{event.eventName}} <span
+                                class="badge">{{event.futureGames}}</span></a>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<div class="container col-md-offset-3 col-md-8 ">
+    <div class="row text-center">
+        <div class="jumbotron">
+            <h1>{{vm.game.firstPlayer}} vs {{vm.game.secondPlayer}}</h1>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>{{vm.game.sport}} - {{vm.game.eventName}} - {{vm.game.group}}</h3>
+                    <h5>{{vm.game.startDate | date:'MMM d, HH:mm'}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-repeat="(key, value) in vm.game.bets | groupBy: 'name'">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ key }}</div>
+            <div class="panel-body">
+                <div  class="row"  ng-repeat="bet in value">
+                    <div ng-repeat="odd in bet.odds" ng-if="bet.odds.length % 2">
+                        <div class="col-md-4" ng-if="odd.name == 1">{{vm.game.firstPlayer}} <span
+                                ng-if="odd.specialBetValue != 0">{{odd.specialBetValue}}</span> <span
+                                class="pull-right red">{{odd.value}}</span></div>
+                        <div class="col-md-4" ng-if="odd.name == 'x'">Draw <span ng-if="odd.specialBetValue != 0">{{odd.specialBetValue}}</span>
+                            <span class="pull-right red">{{odd.value}}</span></div>
+                        <div class="col-md-4" ng-if="odd.name == 2">{{vm.game.secondPlayer}} <span
+                                ng-if="odd.specialBetValue != 0">{{odd.specialBetValue}}</span> <span
+                                class="pull-right red">{{odd.value}}</span></div>
+                    </div>
+
+                    <div ng-repeat="odd in bet.odds" ng-if="!(bet.odds.length % 2)">
+                        <div class="col-md-6" ng-if="odd.name == 1">{{vm.game.firstPlayer}} <span
+                                ng-if="odd.specialBetValue != 0"> - ({{odd.specialBetValue}})</span> <span
+                                class="pull-right red">{{odd.value}}</span></div>
+                        <div class="col-md-6" ng-if="odd.name != 1 && odd.name != 2">{{odd.name}} <span
+                                ng-if="odd.specialBetValue != 0"> - ({{odd.specialBetValue}})</span> <span
+                                class="pull-right red">{{odd.value}}</span></div>
+                        <div class="col-md-6" ng-if="odd.name == 2">{{vm.game.secondPlayer}} <span
+                                ng-if="odd.specialBetValue != 0"> - ({{odd.specialBetValue}})</span> <span
+                                class="pull-right red">{{odd.value}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="panel panel-primary text-center">
+                <div class="panel-title">All Sports</div>
+                <div class="panel-body">
+                    <table class="table table-bordered text-center">
+                        <tr class="row text-center">
+                            <th class="col-md-10 text-center">Name</th>
+                            <th class="col-md-2 text-center">Games</th>
+                        </tr>
+                        <tr class="row text-center" ng-repeat="sport in vm.sports">
+                            <td class="col-md-10 text-center"><a href="#/sports/{{sport.name}}">{{sport.name}}</a></td>
+                            <td class="col-md-2 text-center">{{sport.numberOfGames}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
