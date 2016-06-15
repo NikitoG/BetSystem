@@ -2,6 +2,8 @@
 {
     using BetSystem.Web.Api.App_Start;
     using Infrastructure.Mapping;
+    using Infrastructure.RssFeed;
+    using System;
     using System.Reflection;
     using System.Web.Http;
     using System.Web.Mvc;

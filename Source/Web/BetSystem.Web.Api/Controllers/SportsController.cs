@@ -6,8 +6,7 @@
     using System.Linq;
     using System.Web.Http;
     using Models.Games;
-    using System.Web.Http.Cors;
-    
+
     public class SportsController : BaseController
     {
         private readonly ISportsService sports;
@@ -22,18 +21,29 @@
 
         public IHttpActionResult Get()
         {
-            var allSports = this.sports.GetAllSports()
+            var allSports = this.sports.GetAll()
                 .To<ListedSportsResponseModel>()
                 .ToList();
 
             return this.Ok(allSports);
         }
 
-        public IHttpActionResult Get(int id, bool all = false)
+        [Route("api/sports/{name}")]
+        public IHttpActionResult GetBySport(string name, bool all = false)
         {
-            var allGames = this.games.GetAllMatchesBySportId(id, all)
+            var allGames = this.games.GetAllMatchesBySport(name, all)
                 .To<AllGamesBySportResponceView>()
                 .ToList();
+
+            return this.Ok(allGames);
+        }
+
+        [Route("api/events/{eventKey}")]
+        public IHttpActionResult GetByEvent(int eventKey, bool all = false)
+        {
+            var allGames = this.games.GetAllMatchesByEvent(eventKey, all)
+                    .To<AllGamesBySportResponceView>()
+                    .ToList();
 
             return this.Ok(allGames);
         }

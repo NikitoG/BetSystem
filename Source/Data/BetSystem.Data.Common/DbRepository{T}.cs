@@ -2,12 +2,13 @@
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Migrations;
     using System.Linq;
 
     using BetSystem.Data.Common.Models;
-    
+
     public class DbRepository<T> : IDbRepository<T>
-        where T : class, IAuditInfo, IDeletableEntity
+        where T : class, IAuditInfo, IDeletableEntity,IKeyEntity
     {
         public DbRepository(DbContext context)
         {
@@ -41,7 +42,21 @@
 
         public void Add(T entity)
         {
-            this.DbSet.Add(entity);
+            var entry = this.Context.Entry(entity);
+            if (entry.State != EntityState.Detached)
+            {
+                entry.State = EntityState.Added;
+            }
+            else
+            {
+                this.DbSet.Add(entity);
+            }
+        }
+
+        public void Update(T entity)
+        {
+            var entry = this.Context.Entry(entity);
+            entry.State = EntityState.Modified;
         }
 
         public void Delete(T entity)

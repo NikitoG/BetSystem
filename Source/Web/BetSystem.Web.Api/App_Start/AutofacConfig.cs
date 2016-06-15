@@ -14,6 +14,7 @@
     using Autofac.Integration.WebApi;
     using System.Web.Http;
     using System.Data.Entity;
+    using Infrastructure.RssFeed;
     public static class AutofacConfig
     {
         public static void RegisterAutofac()
@@ -54,7 +55,7 @@
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))
                 .InstancePerRequest();
-
+            
             var servicesAssembly = Assembly.GetAssembly(typeof(ISportsService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 

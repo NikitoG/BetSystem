@@ -33,6 +33,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetSystem.Web.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetSystem.Client", "Client\BetSystem.Client\BetSystem.Client.csproj", "{2E5CCE34-2891-450B-9221-F3A49932D651}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{33C92CFB-8AFD-433A-AE40-8AAFA997EA80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssCrawler", "Tools\RssCrawler\RssCrawler.csproj", "{4BCDE1DA-AE1E-4725-B4EA-015645906742}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{2E5CCE34-2891-450B-9221-F3A49932D651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E5CCE34-2891-450B-9221-F3A49932D651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E5CCE34-2891-450B-9221-F3A49932D651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BCDE1DA-AE1E-4725-B4EA-015645906742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BCDE1DA-AE1E-4725-B4EA-015645906742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BCDE1DA-AE1E-4725-B4EA-015645906742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BCDE1DA-AE1E-4725-B4EA-015645906742}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +97,6 @@ Global
 		{856AE9D8-2007-4177-A7F2-9A766185D62C} = {ADF55653-7A76-4647-9C26-23063B51FBAF}
 		{D0340DBC-342E-4764-A073-B334ABAC4699} = {0699E533-AD28-4DEB-8460-F75C334A1FF0}
 		{2E5CCE34-2891-450B-9221-F3A49932D651} = {51B0690C-F98C-4D0F-B521-2AB971CAD78E}
+		{4BCDE1DA-AE1E-4725-B4EA-015645906742} = {33C92CFB-8AFD-433A-AE40-8AAFA997EA80}
 	EndGlobalSection
 EndGlobal
